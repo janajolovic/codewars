@@ -1,13 +1,13 @@
-function findNumber(array) {
-    array = array.sort((a,b) => (a - b))
-    full_array = [];
-    for (i = 1; i <= array.slice(-1)+1; i++) 
-        full_array.push(i)
-    for (i = 0; i <= full_array.length; i++) {
-        if (!array.includes(full_array[i]))
-            return full_array[i];
-    }
-}
+// function findNumber(array) {
+//     array = array.sort((a,b) => (a - b))
+//     full_array = [];
+//     for (i = 1; i <= array.slice(-1)+1; i++) 
+//         full_array.push(i)
+//     for (i = 0; i <= full_array.length; i++) {
+//         if (!array.includes(full_array[i]))
+//             return full_array[i];
+//     }
+// }
 
 
 
@@ -26,6 +26,16 @@ function findNumber(array) {
 //         }
 //     }
 // }
+
+
+function findNumber(arr) {
+    let max = Math.max(...arr);
+    for (let i = 1; i < max; ++i) {
+      if (arr.indexOf(i) < 0) {
+        return i;
+      }
+    }
+}
 
 
 console.log(findNumber([4,2,1]))
