@@ -10,3 +10,4 @@ function spongeMeme(sentence) {
     return arr.join("");
 }
 
+console.log(spongeMeme("stop Making spongebob Memes"))
