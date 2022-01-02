@@ -28,14 +28,21 @@
 // }
 
 
-function findNumber(arr) {
-    let max = Math.max(...arr);
-    for (let i = 1; i < max; ++i) {
-      if (arr.indexOf(i) < 0) {
-        return i;
-      }
-    }
-}
+// function findNumber(arr) {
+//     let max = Math.max(...arr);
+//     console.log(max)
+//     for (let i = 1; i < max; ++i) {
+//         console.log(i, arr.indexOf(i))
+//       if (arr.indexOf(i) < 0) {
+//         return arr.indexOf(i);
+//       }
+//     }
+// }
 
 
-console.log(findNumber([4,2,1]))
+// console.log(findNumber([4,2,1]))
+
+
+
+arr = [1,2,3]
+console.log(arr.indexOf(9))
