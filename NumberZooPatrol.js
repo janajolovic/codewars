@@ -1,48 +1,23 @@
-// function findNumber(array) {
-//     array = array.sort((a,b) => (a - b))
-//     full_array = [];
-//     for (i = 1; i <= array.slice(-1)+1; i++) 
-//         full_array.push(i)
-//     for (i = 0; i <= full_array.length; i++) {
-//         if (!array.includes(full_array[i]))
-//             return full_array[i];
-//     }
-// }
+function findNumber(array) {
+    array = array.sort((a,b) => (a - b))
+    let all_numbers = []
+    for (i = array[0]; i <= array[array.length-1]; i++) {
+        all_numbers.push(i)
+    }
+    if (JSON.stringify(array)==JSON.stringify(all_numbers)) {
+        return array[array.length - 1] + 1;
+    }
+    all_numbers = new Set(all_numbers)
+    let numbers = new Set(array);
+    return difference(all_numbers, numbers)
+}
 
+function difference(setA, setB) {
+    const diff = new Set(setA);
+    for (const elem of setB) {
+        diff.delete(elem);
+    }
+    return diff;
+}
 
-
-
-// function findNumber(array) {
-//     array = array.sort((a,b) => (a - b))
-//     full_array = [];
-//     for (i = 1; i <= array.slice(-1)+1; i++) 
-//         full_array.push(i)
-//     if (array === full_array) 
-//         return array.length+1
-//     else {
-//         for (i = 0; i <= full_array.length; i++) {
-//             if (!array.includes(full_array[i]))
-//                 return full_array[i];
-//         }
-//     }
-// }
-
-
-// function findNumber(arr) {
-//     let max = Math.max(...arr);
-//     console.log(max)
-//     for (let i = 1; i < max; ++i) {
-//         console.log(i, arr.indexOf(i))
-//       if (arr.indexOf(i) < 0) {
-//         return arr.indexOf(i);
-//       }
-//     }
-// }
-
-
-// console.log(findNumber([4,2,1]))
-
-
-
-arr = [1,2,3]
-console.log(arr.indexOf(9))
+console.log(findNumber([1,3]))
